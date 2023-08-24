@@ -13,6 +13,7 @@ form {
 
 .currentTemp {
   padding: 10px;
+  padding-left: 30px;
   margin-top: 20px;
   margin-left: 0;
   text-align: left;
@@ -24,6 +25,7 @@ form {
 
 .currentCity {
   padding: 10px;
+  padding-right: 30px;
   margin-top: 20px;
   margin-right: 0;
   text-align: right;
@@ -43,6 +45,10 @@ form {
   color: #5a6275;
 }
 
+.btn-info {
+  margin-right: 20px;
+}
+
 #celcius,
 #fahrenheit {
   color: black;
@@ -58,4 +64,12 @@ form {
 #temp {
   font-size: 28px;
   font-weight: bold;
+}
+
+#codeSrc {
+  margin-left: 20px;
+}
+
+#codeSrc a {
+  text-decoration: none;
 }
