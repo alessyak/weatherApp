@@ -1,0 +1,61 @@
+form {
+  padding: 20px;
+  margin-top: 10px;
+  margin-left: 0;
+}
+
+.app {
+  border: 1px solid #5a6275;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.currentTemp {
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 0;
+  text-align: left;
+}
+
+.currentTemp h6 {
+  color: #5a6275;
+}
+
+.currentCity {
+  padding: 10px;
+  margin-top: 20px;
+  margin-right: 0;
+  text-align: right;
+}
+
+.currentCity h6 {
+  color: #5a6275;
+}
+
+.col {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.col h6 {
+  color: #5a6275;
+}
+
+#celcius,
+#fahrenheit {
+  color: black;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.selectedUnit {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+#temp {
+  font-size: 28px;
+  font-weight: bold;
+}
