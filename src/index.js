@@ -42,17 +42,19 @@ if (minutes < 10) {
 }
 time.innerHTML = `${hours}:${minutes}`;
 
-function displayCity(event) {
+function displayCity(city) {
+  axios.get(`${apiUrl}q=${city}&units=metric&appid=${apiKey}`).then(show);
+}
+
+function handleInput(event) {
   event.preventDefault();
   let cityinput = document.querySelector("#cityInput");
-  axios
-    .get(`${apiUrl}q=${cityinput.value}&units=metric&appid=${apiKey}`)
-    .then(show);
+  displayCity(cityinput.value);
   cityinput.value = "";
 }
 
 let form = document.querySelector(".btn-info");
-form.addEventListener("click", displayCity);
+form.addEventListener("click", handleInput);
 
 let tempC = null;
 
@@ -113,3 +115,5 @@ function displayCurLoc(event) {
 
 let currentLocation = document.querySelector(".btn-success");
 currentLocation.addEventListener("click", displayCurLoc);
+
+displayCity("Toronto");
