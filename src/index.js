@@ -54,17 +54,15 @@ function displayCity(event) {
 let form = document.querySelector(".btn-info");
 form.addEventListener("click", displayCity);
 
+let tempC = null;
+
 function covertF(event) {
   event.preventDefault();
-  let temp = document.querySelector("span#temp");
-  let text = temp.textContent.trim();
-  let tempC = parseInt(text.slice(2));
+  celcius.classList.remove("selectedUnit");
+  fah.classList.add("selectedUnit");
+  let temp = document.querySelector("strong#temp");
   let tempF = (tempC * 9) / 5 + 32;
-  if (hours < 20) {
-    temp.textContent = `☀️${Math.round(tempF)}`;
-  } else {
-    temp.textContent = `🌑${Math.round(tempF)}`;
-  }
+  temp.innerHTML = `${Math.round(tempF)}`;
 }
 
 let fah = document.querySelector("#fahrenheit");
@@ -72,15 +70,10 @@ fah.addEventListener("click", covertF);
 
 function covertC(event) {
   event.preventDefault();
-  let temp = document.querySelector("span#temp");
-  let text = temp.textContent.trim();
-  let tempF = parseInt(text.slice(2));
-  let tempC = ((tempF - 32) * 5) / 9;
-  if (hours < 20) {
-    temp.textContent = `☀️${Math.round(tempC)}`;
-  } else {
-    temp.textContent = `🌑${Math.round(tempC)}`;
-  }
+  fah.classList.remove("selectedUnit");
+  celcius.classList.add("selectedUnit");
+  let temp = document.querySelector("strong#temp");
+  temp.innerHTML = `${Math.round(tempC)}`;
 }
 
 let celcius = document.querySelector("#celcius");
@@ -92,7 +85,7 @@ let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
 function show(response) {
   let curCity = document.querySelector("#city");
   curCity.innerHTML = `${response.data.name}`;
-  let temp = Math.round(response.data.main.temp);
+  tempC = Math.round(response.data.main.temp);
   let curTemp = document.querySelector("#temp");
   let icon = document.querySelector("#icon");
   icon.setAttribute(
@@ -100,7 +93,7 @@ function show(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
-  curTemp.innerHTML = `${temp}`;
+  curTemp.innerHTML = `${tempC}`;
   let humidity = document.querySelector("#humid");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 }

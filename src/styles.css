@@ -57,14 +57,21 @@ form {
   color: #5a6275;
 }
 
-.selectedUnit {
-  font-size: 26px;
-  font-weight: bold;
-}
-
 .units {
+  color: #5a6275;
+  font-size: 18px;
   position: relative;
   top: -15px;
+}
+
+.units a {
+  text-decoration: none;
+}
+
+.selectedUnit {
+  font-weight: bold;
+  color: #5a6275;
+  cursor: default;
 }
 
 .col {
@@ -79,13 +86,6 @@ form {
 
 .btn-info {
   margin-right: 20px;
-}
-
-#celcius,
-#fahrenheit {
-  color: black;
-  text-decoration: none;
-  font-size: 18px;
 }
 
 #temp {
@@ -103,5 +103,5 @@ form {
 }
 
 #codeSrc a {
-  text-decoration: none;
+  color: #5a6275;
 }
