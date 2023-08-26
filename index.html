@@ -22,24 +22,22 @@
     <div class="container">
       <div class="app-wrapper">
         <div class="app">
-          <form>
+          <form id="current-city">
             <div class="row">
-              <form id="current-city">
-                <div class="col-6">
-                  <input
-                    type="text"
-                    name="city"
-                    class="form-control"
-                    placeholder="Enter your city"
-                    id="cityInput"
-                    autocomplete="off"
-                  />
-                </div>
-                <div class="col-6">
-                  <button type="submit" class="btn btn-info">Search</button>
-                  <button type="button" class="btn btn-success">Current</button>
-                </div>
-              </form>
+              <div class="col-6">
+                <input
+                  type="text"
+                  name="city"
+                  class="form-control"
+                  placeholder="Enter your city"
+                  id="cityInput"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-6">
+                <button type="submit" class="btn btn-info">Search</button>
+                <button type="button" class="btn btn-success">Current</button>
+              </div>
             </div>
           </form>
           <div class="row">
@@ -61,38 +59,7 @@
               <h6 id="currentTime">3:45PM</h6>
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <h4>Sun</h4>
-              <h1>☀️</h1>
-              <h6><strong>28°</strong> | 15°</h6>
-            </div>
-            <div class="col">
-              <h4>Mon</h4>
-              <h1>🌥️</h1>
-              <h6><strong>29°</strong> | 17°</h6>
-            </div>
-            <div class="col">
-              <h4>Tue</h4>
-              <h1>☀️</h1>
-              <h6><strong>29°</strong> | 17°</h6>
-            </div>
-            <div class="col">
-              <h4>Wed</h4>
-              <h1>☀️</h1>
-              <h6><strong>31°</strong> | 19°</h6>
-            </div>
-            <div class="col">
-              <h4>Thu</h4>
-              <h1>☀️</h1>
-              <h6><strong>33°</strong> | 21°</h6>
-            </div>
-            <div class="col">
-              <h4>Fri</h4>
-              <h1>🌧️</h1>
-              <h6><strong>31°</strong> | 22°</h6>
-            </div>
-          </div>
+          <div class="weatherForecast" id="forecast"></div>
         </div>
         <small id="codeSrc"
           ><a href="https://github.com/alessyak/weatherApp" target="_blank"

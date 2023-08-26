@@ -81,8 +81,50 @@ function covertC(event) {
 let celcius = document.querySelector("#celcius");
 celcius.addEventListener("click", covertC);
 
-let apiKey = "73ebf414d866b627835ae28b67acbca8";
+let apiKey = "96771e971243152d6b8948878c26adde";
 let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayWeatherForecast(response) {
+  let dailyForecast = response.data.daily;
+  let forecast = document.querySelector("#forecast");
+  let weatherForecast = `<div class="row">`;
+  dailyForecast.forEach(function (dayForecast, index) {
+    if (index < 6) {
+      weatherForecast =
+        weatherForecast +
+        `<div class="col">
+          <h4>${formatDay(dayForecast.dt)}</h4>
+          <img src="http://openweathermap.org/img/wn/${
+            dayForecast.weather[0].icon
+          }@2x.png" alt="http://openweathermap.org/img/wn/${
+          dayForecast.weather[0].description
+        }" width="72" />
+          <h6>
+            <span class="day-maxTemp">${Math.round(
+              dayForecast.temp.max
+            )}°</span> |
+            <span class="day-minTemp">${Math.round(
+              dayForecast.temp.min
+            )}°</span>
+          </h6>
+        </div>`;
+    }
+  });
+  weatherForecast = weatherForecast + `</div>`;
+  forecast.innerHTML = weatherForecast;
+}
+
+function getForecast(coords) {
+  let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&units=metric&appid=${apiKey}`;
+  axios.get(url).then(displayWeatherForecast);
+}
 
 function show(response) {
   let curCity = document.querySelector("#city");
@@ -100,6 +142,8 @@ function show(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed * 3.6)} km/h`;
+
+  getForecast(response.data.coord);
 }
 
 function display(position) {

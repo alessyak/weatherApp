@@ -88,6 +88,10 @@ form {
   margin-right: 20px;
 }
 
+.day-maxTemp {
+  font-weight: bold;
+}
+
 #temp {
   font-size: 58px;
   font-weight: 600;
@@ -104,4 +108,5 @@ form {
 
 #codeSrc a {
   color: #5a6275;
+  text-decoration: none;
 }
