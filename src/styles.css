@@ -1,14 +1,36 @@
+body {
+  font-family: "Arimo", sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
 form {
   padding: 20px;
   margin-top: 10px;
   margin-left: 0;
 }
 
+.app-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.app-wrapper small {
+  display: block;
+  padding-top: 10px;
+}
+
 .app {
+  display: block;
   border: 1px solid #5a6275;
   padding: 20px;
-  margin: 20px;
+  margin-top: 30px;
   border-radius: 5px;
+}
+
+.float-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .currentTemp {
@@ -35,6 +57,16 @@ form {
   color: #5a6275;
 }
 
+.selectedUnit {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.units {
+  position: relative;
+  top: -15px;
+}
+
 .col {
   text-align: center;
   padding: 10px;
@@ -53,21 +85,21 @@ form {
 #fahrenheit {
   color: black;
   text-decoration: none;
-  font-size: 22px;
-}
-
-.selectedUnit {
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 18px;
 }
 
 #temp {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 58px;
+  font-weight: 600;
 }
 
-#codeSrc {
-  margin-left: 20px;
+#icon {
+  padding: 0;
+  margin: 0;
+}
+
+#city {
+  font-weight: 600;
 }
 
 #codeSrc a {

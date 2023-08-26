@@ -94,11 +94,13 @@ function show(response) {
   curCity.innerHTML = `${response.data.name}`;
   let temp = Math.round(response.data.main.temp);
   let curTemp = document.querySelector("#temp");
-  if (hours < 20) {
-    curTemp.innerHTML = `☀️${temp}`;
-  } else {
-    curTemp.innerHTML = `🌑${temp}`;
-  }
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
+  curTemp.innerHTML = `${temp}`;
   let humidity = document.querySelector("#humid");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 }

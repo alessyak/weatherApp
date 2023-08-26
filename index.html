@@ -3,6 +3,12 @@
   <head>
     <title>Weather App</title>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&family=Bricolage+Grotesque:opsz,wght@10..48,500;10..48,700&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,80 +20,85 @@
   </head>
   <body>
     <div class="container">
-      <div class="app">
-        <form>
+      <div class="app-wrapper">
+        <div class="app">
+          <form>
+            <div class="row">
+              <form id="current-city">
+                <div class="col-6">
+                  <input
+                    type="text"
+                    name="city"
+                    class="form-control"
+                    placeholder="Enter your city"
+                    id="cityInput"
+                  />
+                </div>
+                <div class="col-6">
+                  <button type="submit" class="btn btn-info">Search</button>
+                  <button type="button" class="btn btn-success">Current</button>
+                </div>
+              </form>
+            </div>
+          </form>
           <div class="row">
-            <form id="current-city">
-              <div class="col-6">
-                <input
-                  type="text"
-                  name="city"
-                  class="form-control"
-                  placeholder="Enter your city"
-                  id="cityInput"
-                />
+            <div class="currentTemp col-6">
+              <div class="float-left">
+                <img src="" alt="" id="icon" />
+                <strong id="temp">28</strong>
+                <span class="units"
+                  ><a href="#" id="celcius" class="selectedUnit">°C</a
+                  ><a href="#" id="fahrenheit">|°F</a></span
+                >
               </div>
-              <div class="col-3">
-                <button type="submit" class="btn btn-info">Search</button>
-                <button type="button" class="btn btn-success">Current</button>
-              </div>
-            </form>
+              <h6 id="humid">Humidity: 42%</h6>
+            </div>
+            <div class="currentCity col-6">
+              <h1 id="city">Toronto</h1>
+              <h6 id="currentDate">Saturday July 22</h6>
+              <h6 id="currentTime">3:45PM</h6>
+            </div>
           </div>
-        </form>
-        <div class="row">
-          <div class="currentTemp col-6">
-            <span id="temp"> ☀️28 </span>
-            <span
-              ><a href="#" id="celcius" class="selectedUnit">°C</a
-              ><a href="#" id="fahrenheit">|°F</a></span
-            >
-            <h6 id="humid">Humidity: 42%</h6>
-          </div>
-          <div class="currentCity col-6">
-            <h1 id="city">Toronto</h1>
-            <h6 id="currentDate">Saturday July 22</h6>
-            <h6 id="currentTime">3:45PM</h6>
+          <div class="row">
+            <div class="col">
+              <h4>Sun</h4>
+              <h1>☀️</h1>
+              <h6><strong>28°</strong> | 15°</h6>
+            </div>
+            <div class="col">
+              <h4>Mon</h4>
+              <h1>🌥️</h1>
+              <h6><strong>29°</strong> | 17°</h6>
+            </div>
+            <div class="col">
+              <h4>Tue</h4>
+              <h1>☀️</h1>
+              <h6><strong>29°</strong> | 17°</h6>
+            </div>
+            <div class="col">
+              <h4>Wed</h4>
+              <h1>☀️</h1>
+              <h6><strong>31°</strong> | 19°</h6>
+            </div>
+            <div class="col">
+              <h4>Thu</h4>
+              <h1>☀️</h1>
+              <h6><strong>33°</strong> | 21°</h6>
+            </div>
+            <div class="col">
+              <h4>Fri</h4>
+              <h1>🌧️</h1>
+              <h6><strong>31°</strong> | 22°</h6>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <h4>Sun</h4>
-            <h1>☀️</h1>
-            <h6><strong>28°</strong> | 15°</h6>
-          </div>
-          <div class="col">
-            <h4>Mon</h4>
-            <h1>🌥️</h1>
-            <h6><strong>29°</strong> | 17°</h6>
-          </div>
-          <div class="col">
-            <h4>Tue</h4>
-            <h1>☀️</h1>
-            <h6><strong>29°</strong> | 17°</h6>
-          </div>
-          <div class="col">
-            <h4>Wed</h4>
-            <h1>☀️</h1>
-            <h6><strong>31°</strong> | 19°</h6>
-          </div>
-          <div class="col">
-            <h4>Thu</h4>
-            <h1>☀️</h1>
-            <h6><strong>33°</strong> | 21°</h6>
-          </div>
-          <div class="col">
-            <h4>Fri</h4>
-            <h1>🌧️</h1>
-            <h6><strong>31°</strong> | 22°</h6>
-          </div>
-        </div>
-      </div>
-      <span id="codeSrc"
-        ><a href="https://github.com/alessyak/weatherApp" target="_blank"
-          >Open-source code</a
+        <small id="codeSrc"
+          ><a href="https://github.com/alessyak/weatherApp" target="_blank"
+            >Open-source code</a
+          >
+          by Alessya Krapivina</small
         >
-        by Alessya Krapivina</span
-      >
+      </div>
     </div>
     <script src="src/index.js"></script>
   </body>
