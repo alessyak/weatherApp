@@ -98,6 +98,8 @@ function show(response) {
   curTemp.innerHTML = `${tempC}`;
   let humidity = document.querySelector("#humid");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed * 3.6)} km/h`;
 }
 
 function display(position) {
