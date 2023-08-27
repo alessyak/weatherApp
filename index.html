@@ -34,9 +34,13 @@
                   autocomplete="off"
                 />
               </div>
-              <div class="col-6">
-                <button type="submit" class="btn btn-info">Search</button>
-                <button type="button" class="btn btn-success">Current</button>
+              <div class="col-3">
+                <button type="submit" class="btn btn-info w-100">Search</button>
+              </div>
+              <div class="col-3">
+                <button type="button" class="btn btn-success w-100">
+                  Current
+                </button>
               </div>
             </div>
           </form>
@@ -44,7 +48,7 @@
             <div class="currentTemp col-6">
               <div class="float-left">
                 <img src="" alt="" id="icon" />
-                <strong id="temp">28</strong>
+                <strong id="temp"></strong>
                 <span class="units"
                   ><a href="#" id="celcius" class="selectedUnit">°C</a> |
                   <a href="#" id="fahrenheit">°F</a></span
@@ -54,11 +58,14 @@
               <h6 id="wind"></h6>
             </div>
             <div class="currentCity col-6">
-              <h1 id="city">Toronto</h1>
-              <h6 id="currentDate">Saturday July 22</h6>
-              <h6 id="currentTime">3:45PM</h6>
+              <h1 id="city"></h1>
+              <h6 id="currentDate"></h6>
+              <h6 id="currentTime"></h6>
             </div>
           </div>
+          <h3>Hourly Forecast:</h3>
+          <div class="hourlyForecast" id="hourly"></div>
+          <h3>7-Day Forecast:</h3>
           <div class="weatherForecast" id="forecast"></div>
         </div>
         <small id="codeSrc"

@@ -1,12 +1,20 @@
 body {
   font-family: "Arimo", sans-serif;
   font-family: "Bricolage Grotesque", sans-serif;
+  background-color: #f7f4ea;
+  color: #574b9b;
 }
 
 form {
   padding: 20px;
   margin-top: 10px;
   margin-left: 0;
+}
+
+h3 {
+  padding-left: 10px;
+  margin-top: 25px;
+  margin-bottom: 0;
 }
 
 .app-wrapper {
@@ -21,10 +29,11 @@ form {
 
 .app {
   display: block;
-  border: 1px solid #5a6275;
+  border: 1px solid #9ce3cf;
   padding: 20px;
   margin-top: 30px;
   border-radius: 5px;
+  background-color: #9ce3cf;
 }
 
 .float-left {
@@ -85,7 +94,31 @@ form {
 }
 
 .btn-info {
-  margin-right: 20px;
+  background-color: #6a7ff5;
+  border: 1px solid #6a7ff5;
+  color: #f7f4ea;
+  transition: all 200ms ease-in-out;
+}
+
+.btn-info:hover {
+  background-color: #6a7ff5;
+  border: 1px solid #6a7ff5;
+  color: #f7f4ea;
+  opacity: 80%;
+}
+
+.btn-success {
+  background-color: #574b9b;
+  border: 1px solid #574b9b;
+  color: #f7f4ea;
+  transition: all 200ms ease-in-out;
+}
+
+.btn-success:hover {
+  background-color: #574b9b;
+  border: 1px solid #574b9b;
+  color: #f7f4ea;
+  opacity: 80%;
 }
 
 .day-maxTemp {
@@ -104,6 +137,14 @@ form {
 
 #city {
   font-weight: 600;
+}
+
+#cityInput {
+  background-color: #f7f4ea;
+}
+
+#codeSrc {
+  padding: 10px;
 }
 
 #codeSrc a {
