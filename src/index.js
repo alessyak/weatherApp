@@ -92,7 +92,6 @@ function formatHour(timestamp) {
 }
 
 function displayHourlyForecast(response) {
-  console.log(response.data.hourly);
   let hourlyForecast = response.data.hourly;
   let forecast = document.querySelector("#hourly");
   let weatherForecast = `<div class="row">`;
@@ -145,10 +144,23 @@ function displayWeatherForecast(response) {
   forecast.innerHTML = weatherForecast;
 }
 
+function displayTime(response) {
+  const currentUnixTime = response.data.current.dt * 1000;
+  const timezoneOffset = response.data.timezone_offset;
+
+  let adjustedDate = new Date(currentUnixTime + timezoneOffset * 1000);
+  let hours = adjustedDate.getUTCHours().toString().padStart(2, "0");
+  let minutes = adjustedDate.getUTCMinutes().toString().padStart(2, "0");
+
+  let currentTime = document.querySelector("#currentTime");
+  currentTime.innerHTML = `${hours}:${minutes}`;
+}
+
 function getForecast(coords) {
   let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&units=metric&appid=${apiKey}`;
   axios.get(url).then(displayHourlyForecast);
   axios.get(url).then(displayWeatherForecast);
+  axios.get(url).then(displayTime);
 }
 
 function show(response) {
