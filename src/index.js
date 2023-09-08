@@ -86,13 +86,15 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-function formatHour(timestamp) {
-  let date = new Date(timestamp * 1000);
-  return date.getHours().toString().padStart(2, "0");
+function formatHour(timestamp, offset) {
+  let time = timestamp * 1000;
+  let date = new Date(time + offset * 1000);
+  return date.getUTCHours().toString().padStart(2, "0");
 }
 
 function displayHourlyForecast(response) {
   let hourlyForecast = response.data.hourly;
+  console.log(response.data);
   let forecast = document.querySelector("#hourly");
   let weatherForecast = `<div class="row">`;
   hourlyForecast.forEach(function (hourForecast, index) {
@@ -100,7 +102,10 @@ function displayHourlyForecast(response) {
       weatherForecast =
         weatherForecast +
         `<div class="col">
-            <h4>${formatHour(hourForecast.dt)}</h4>
+            <h4>${formatHour(
+              hourForecast.dt,
+              response.data.timezone_offset
+            )}</h4>
             <img src="http://openweathermap.org/img/wn/${
               hourForecast.weather[0].icon
             }@2x.png" alt="http://openweathermap.org/img/wn/${
